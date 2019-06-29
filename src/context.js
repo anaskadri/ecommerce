@@ -17,6 +17,19 @@ class ProductProvider extends Component {
         console.log("addd to cart")
     };
 
+    tester = () => {
+        console.log('state products :', this.state.products[0].inCart);
+        console.log('data products :', storeProducts[0].inCart);
+        const tempProducts = [...this.state.products];
+        tempProducts[0].inCart = true;
+        this.setState ( () => {
+            return {products: tempProducts}
+        }, () => {
+            console.log('state products :', this.state.products[0].inCart);
+            console.log('data products :', storeProducts[0].inCart);
+        })
+    }
+
     render() { 
         return ( 
             <ProductContext.Provider 
@@ -25,7 +38,7 @@ class ProductProvider extends Component {
                     handleDetail: this.handleDetail,
                     addToCart: this.addToCart
                     }}>
-                    
+                    <button onClick={this.tester}>Test me</button>
                     {this.props.children}
             </ProductContext.Provider>
          );

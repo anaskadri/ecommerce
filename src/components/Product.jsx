@@ -37,15 +37,15 @@ class Product extends Component {
 }
 
 
-Product.PropsTypes = {
+Product.propTypes = {
     product: PropTypes.shape ({
-        id:PropTypes.number,
-        img:PropTypes.string,
-        title:PropTypes.string,
-        price:PropTypes.number,
-        inCart:PropTypes.bool,
-    }).isrequired
-}
+        id: PropTypes.number,
+        img: PropTypes.string,
+        title: PropTypes.string,
+        price: PropTypes.number,
+        inCart: PropTypes.bool,
+    }).isRequired
+};
 
 const ProductWrapper = styled.div`
 .card {
