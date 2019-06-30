@@ -5,30 +5,41 @@ const ProductContext = React.createContext ();
 //Provider
 
 class ProductProvider extends Component {
-        state = { 
-            products: storeProducts,
-            detailProduct: detailProduct
-         };
-
-    handleDetail = () => {
-        console.log("Details")
-    };
-    addToCart = () => {
-        console.log("addd to cart")
+    state = { 
+        products: [],
+        detailProduct: detailProduct
     };
 
-    tester = () => {
-        console.log('state products :', this.state.products[0].inCart);
-        console.log('data products :', storeProducts[0].inCart);
-        const tempProducts = [...this.state.products];
-        tempProducts[0].inCart = true;
-        this.setState ( () => {
-            return {products: tempProducts}
-        }, () => {
-            console.log('state products :', this.state.products[0].inCart);
-            console.log('data products :', storeProducts[0].inCart);
-        })
+    componentDidMount () {
+        this.setProducts ();
     }
+
+    setProducts = () => {
+        let tempProducts = [];
+        storeProducts.forEach(item => {
+            const singleItem = {...item};
+            tempProducts = [...tempProducts, singleItem];
+        })
+        this.setState ( () => {
+            return {products:tempProducts};
+        });
+    };
+
+    getItem = (id) => {
+        const product = this.state.products.find(item => item.id === id);
+        return product;  
+    };
+
+    handleDetail = (id) => {
+        const product = this.getItem();
+        this.setState( () => {
+            return {detailProduct:product}
+        })
+    };
+
+    addToCart = (id) => {
+        console.log("addd to cart id is ", id);
+    };
 
     render() { 
         return ( 
@@ -38,7 +49,6 @@ class ProductProvider extends Component {
                     handleDetail: this.handleDetail,
                     addToCart: this.addToCart
                     }}>
-                    <button onClick={this.tester}>Test me</button>
                     {this.props.children}
             </ProductContext.Provider>
          );
