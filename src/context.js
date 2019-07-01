@@ -77,7 +77,8 @@ class ProductProvider extends Component {
     decrement = (id) => {
         console.log("decrement");
     };
-    removeItem = (id) => {
+
+    removeItem = id => {
         let tempProducts = [...this.state.products];
         let tempCart = [...this.state.cart];
 
@@ -100,8 +101,9 @@ class ProductProvider extends Component {
             () => {
                 this.addTotals ();
             }
-        );
+            );
     };
+
     clearCart = (id) => {
         this.setState( () => {
             return {
