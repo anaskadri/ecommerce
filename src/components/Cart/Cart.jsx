@@ -3,6 +3,8 @@ import Title from '../Title';
 import CartColumns from './CartColumns';
 import EmptyCart from './EmptyCart';
 import {ProductConsumer} from '../../context';
+import CartList from './CartList';
+import CartTotals from './CartTotals';
 
 class Cart extends Component {
     constructor(props) {
@@ -20,14 +22,19 @@ class Cart extends Component {
                                 <React.Fragment>
                                     <Title name="Your" title="cart" />
                                     <CartColumns />
+                                    <CartList value={value} />
+                                    <CartTotals value={value} />
                                 </React.Fragment>
                             );
                         }
+                        else {
+                            return (
+                                <EmptyCart />
+                            );
+                        }
                     }}
-                    <Title name="Your" title="cart" />
-                    <CartColumns />
                 </ProductConsumer>
-                <EmptyCart />
+                
             </section>
          );
     }
