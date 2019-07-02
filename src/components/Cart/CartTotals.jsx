@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
-class CartTotals extends Component {
-    constructor(props) {
-        super(props);
-        this.value = props.value;
-        this.state = {  }
-    }
-    render() { 
-        const {cartSubTotal, cartTax, cartTotal, clearCart} = this.value;
+function CartTotals (props){
+    
+        let value = props.value;
+
+        const {cartSubTotal, cartTax, cartTotal, clearCart} = value;
         return ( 
             <React.Fragment>
                 <div className="container">
@@ -45,7 +42,6 @@ class CartTotals extends Component {
                 </div>
             </React.Fragment>
          );
-    }
 }
  
 export default CartTotals;

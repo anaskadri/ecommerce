@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
 import CartItem from './CartItem';
 
-class CartList extends Component {
-    constructor(props) {
-        super(props);
-        this.value = props.value;
-    }
-    render() { 
-        const {cart} = this.value;
+function CartList (props) {
+
+        let value = props.value;
+        const {cart} = value;
+
         return ( 
             <div className="container-fluid">
-                {cart.map(item => {
-                    return <CartItem 
-                                key={item.id} 
-                                item={item}
-                                value={this.value}
-                            />;
-                })}
+                {
+                    cart.map(item => {
+                    return (
+                        <CartItem 
+                            key={item.id} 
+                            item={item}
+                            value={value}
+                        />
+                    );
+                    
+                    })
+                }
             </div>
          );
-    }
+    
 }
  
 export default CartList;

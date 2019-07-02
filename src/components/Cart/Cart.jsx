@@ -6,12 +6,7 @@ import {ProductConsumer} from '../../context';
 import CartList from './CartList';
 import CartTotals from './CartTotals';
 
-class Cart extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
-    render() { 
+function Cart () {
         return ( 
             <section>
                 <ProductConsumer>
@@ -37,7 +32,6 @@ class Cart extends Component {
                 
             </section>
          );
-    }
 }
  
 export default Cart;
