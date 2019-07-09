@@ -15,11 +15,11 @@ Download Ecommerce  project and Unzip it
 
 <h3>step2</h3>
 Run Command Line & Type those Commands
-$ cd PATH-TO-PROJECT-FOLDER
-$ npm install react-scripts --save-dev
+<pre>$ cd PATH-TO-PROJECT-FOLDER</pre>
+<pre>$ npm install react-scripts --save-dev</pre>
 <h3>step3</h3>
 Run the App
-$ npm start
+<pre>$ npm start</pre>
 Build with
 Reactjs
 Bootstrap
