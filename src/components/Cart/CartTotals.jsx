@@ -1,9 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import PaypalButton from './PaypalButton';
 
 function CartTotals (props){
     
         let value = props.value;
+        let history = props.history;
 
         const {cartSubTotal, cartTax, cartTotal, clearCart} = value;
         return ( 
@@ -37,6 +39,11 @@ function CartTotals (props){
                                 </span>
                                 <strong>$ {cartTotal}</strong>
                             </h5>
+                            <PaypalButton 
+                                total = {cartTotal}
+                                clearCart = {clearCart}
+                                history = {history}
+                            />
                         </div>
                     </div>
                 </div>

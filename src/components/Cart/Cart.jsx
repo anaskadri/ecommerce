@@ -6,7 +6,7 @@ import {ProductConsumer} from '../../context';
 import CartList from './CartList';
 import CartTotals from './CartTotals';
 
-function Cart () {
+function Cart (props) {
         return ( 
             <section>
                 <ProductConsumer>
@@ -18,7 +18,10 @@ function Cart () {
                                     <Title name="Your" title="cart" />
                                     <CartColumns />
                                     <CartList value={value} />
-                                    <CartTotals value={value} />
+                                    <CartTotals 
+                                        value={value} 
+                                        history={props.history}
+                                        />
                                 </React.Fragment>
                             );
                         }
