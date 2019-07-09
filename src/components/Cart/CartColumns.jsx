@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 
-class CartColumns extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
-    render() { 
+function CartColumns () {
         return ( 
             <div className="container-fluid text-center d-none d-lg-block">
                 <div className="row">
@@ -45,6 +40,5 @@ class CartColumns extends Component {
             </div>
          );
     }
-}
  
 export default CartColumns;

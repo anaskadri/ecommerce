@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 
 
-class CartItem extends Component {
-    constructor(props) {
-        super(props);
-        this.value = props.value;
-        this.item = props.item;
-        this.state = {  }
-    }
-    render() { 
-        const {id, title, img, price, total, count} = this.item;
-        const {increment, decrement, removeItem} = this.value;
+function CartItem (props) {
+        let value = props.value;
+        let item = props.item;
+
+        const {id, title, img, price, total, count} = item;
+        const {increment, decrement, removeItem} = value;
         return ( 
             <div className="row my-2 text-capitalize text-center">
                 <div className="col-10 mx-auto col-lg-2">
@@ -73,6 +69,5 @@ class CartItem extends Component {
         
          );
     }
-}
  
 export default CartItem;

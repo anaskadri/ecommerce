@@ -50,7 +50,10 @@ class ProductProvider extends Component {
         product.count = 1;
         const price = product.price;
         product.total = price;
-        this.setState ({ products: tempProducts, cart: [...this.state.cart, product]}, this.addTotals())
+      
+        this.setState (() => {return{products: tempProducts, cart: [...this.state.cart, product]}}, () => {
+            this.addTotals ();
+        });
     };
 
     openModal = (id) => {
@@ -133,7 +136,7 @@ class ProductProvider extends Component {
                 cartSubTotal: subTotal,
                 cartTax: tax,
                 cartTotal: total
-        })
+        });
     };
 
     render() { 

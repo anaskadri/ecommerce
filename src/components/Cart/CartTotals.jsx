@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 
 function CartTotals (props){
@@ -16,7 +16,7 @@ function CartTotals (props){
                                     className="btn btn-outline-danger text-uppercase mb-3 pc-5" 
                                     type="button"
                                     onClick={() => clearCart()}>
-                                    Clear CArt
+                                    Clear Cart
                                 </button>
                             </Link>
                             <h5>
