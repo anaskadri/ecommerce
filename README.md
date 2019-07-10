@@ -1,5 +1,5 @@
 <h1>Ecommerce Website USing Reactjs</h1>
-<h3><a target="_blank">https://happy-panini-917400.netlify.com/</a></h3>
+<h3><a href="https://happy-panini-917400.netlify.com/" target="_blank">Visit my website</a></h3>
 
 <h2>Getting Started</h2>
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
